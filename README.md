@@ -12,4 +12,15 @@ var pages=[
 var pb = new pageBook(pages,'d-none',function(){
   //最後一頁再退要做甚麼
 }
+
+```
+
+
+參數:{init:true/false(預設)}
+要不要執行pages中各頁init function
+```
+//直接顯示那頁
+pb.goPage(參數)
+//返回上一頁
+pb.back(參數)
 ```
