@@ -1,6 +1,4 @@
-# pageBook
-
-start
+# 開始
 ```
 var page_array = [
   {
@@ -28,10 +26,23 @@ var page_array = [
 var hideClassName_string = 'hide'
 var pb = new pageBook(page_array,hideClassName_string)
 
-pb.go('p1') //show div#p1
-pb.go('p2') //show div#p2
-pb.go('p3') //show div#p3
 
-pb.back() //show div#p2
-pb.back() //show div#p1
+```
+# 功能
+
+## 切換頁面
+```
+pb.go(pageId,config_obj)
+```
+#### pageId：頁面的Id
+
+#### config_obj：其他參數
+|參數|可輸入值|預設值|說明
+|---|--------|-----|---|
+|reset|true/false|false|換頁時要不要執行該頁面reset() function|
+
+## 上一頁
+
+```
+pb.back()
 ```
