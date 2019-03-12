@@ -1,48 +1,15 @@
-# 開始
 ```
-var page_array = [
+//要控制的頁面array
+var pages=[
   {
-    pageName:"p1",
-    reset:function(){
-        console.log("p1-reset")
-    },
-    
-  },
-  {
-    pageName:"p2",
-    reset:function(){
-        console.log("p2-reset")
-    },
-    
-  },  
-  {
-    pageName:"p3",
-    reset:function(){
-        console.log("p3-reset")
-    },
-    
-  }  
+    pageName:"頁面ID(string)",
+    init:function(){
+      //如果goPage或back有init:true參數，開啟頁面前會先執行這邊
+    }
+
+  }
 ]
-var hideClassName_string = 'hide'
-var pb = new pageBook(page_array,hideClassName_string)
-
-
-```
-# 功能
-
-## 切換頁面
-```
-pb.go(pageId,config_obj)
-```
-#### pageId：頁面的Id
-
-#### config_obj：其他參數
-|參數|可輸入值|預設值|說明
-|---|--------|-----|---|
-|reset|true/false|false|換頁時要不要執行該頁面reset() function|
-
-## 上一頁
-
-```
-pb.back()
+var pb = new pageBook(pages,'d-none',function(){
+  //最後一頁再退要做甚麼
+}
 ```
