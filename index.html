@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="script/pageBook.js"></script>
+</head>
+<style>
+  .hide{
+    display: none;
+  }
+</style>
+<body>
+  <div id="view1" class="hide">
+    <h3>view1</h3>
+    <button onclick="pb.back({reset:true})">back</button>
+    <br>
+    <input type="text" class="demo"><br>
+    <button onclick="pb.go('view1')">view1</button><br>
+    <button onclick="pb.go('view2')">view2</button><br>
+    <button onclick="pb.go('view3')">view3</button>
+  </div>
+  <div id="view2" class="hide">
+    <h3>view2</h3>
+    <button onclick="pb.back()">back</button>
+    <p class="demo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum alias placeat modi delectus non nemo quo dicta voluptatum omnis! Laboriosam beatae deleniti perspiciatis harum omnis veniam esse culpa quis odit.</p>
+    <button onclick="pb.go('view1')">view1</button><br>
+    <button onclick="pb.go('view2')">view2</button><br>
+    <button onclick="pb.go('view3')">view3</button>
+  </div>
+  <div id="view3" class="hide">
+    <h3>view3</h3>
+    <button onclick="pb.back()">back</button><br>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    <button onclick="pb.go('view1')">view1</button><br>
+    <button onclick="pb.go('view2')">view2</button><br>
+    <button onclick="pb.go('view3')">view3</button>
+  </div>
+  <script>
+    var pages = [
+      {
+        pageName:"view1",
+        reset:function(){
+          document.querySelector('input.demo').value = "";
+          alert('view1 reset')
+        }
+      },
+      {
+        pageName:"view2",
+        reset:function(){
+          alert('view2 reset')
+        }
+      },
+      {
+        pageName:"view3",
+        reset:function(){
+          alert('view3 reset')
+        }
+      },              
+    ]
+    var pb = new pageBook(pages,'hide')
+    pb.go('view2')
+  </script>
+</body>
+</html>
